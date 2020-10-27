@@ -29,32 +29,32 @@ export default {
 
 	// Call the API on startup.
 	mounted() {
-		this.callAPI();
+		this.fetchData();
 	},
 
 	// Anytime the genre or page variable is updated, call the API.
 	watch: {
 		genre() {
 			this.page = 1;
-			this.callAPI();
+			this.fetchData();
 		},
 		page() {
-			this.callAPI();
+			this.fetchData();
 		}
 	},
-created: function() {
-		// Create the method you made below
-		this.fetchData();
-},
-methods: {
-		// Fetch data from the API
-		fetchData: function() {
-				this.$http.get(this.baseUrl + '/discover/movie?api_key=' + this.apiKey + '&sort_by=popularity.desc').then(response => {
-						this.items = response.body;
-						this.loaded = false;
-				});
-		}
+	created: function() {
+			// Create the method you made below
+			this.fetchData();
+	},
+	methods: {
+			// Fetch data from the API
+			fetchData: function() {
+					axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=753cbe6c1ec161e02cacd1e323a83454&with_genres=${this.genre}`).then(response => {
+							this.movies = response.data.results;
+							this.loaded = false;
+					});
+			}
+	}
 }
-
 
 </script>

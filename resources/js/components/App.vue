@@ -41,7 +41,7 @@ export default {
 			currentGenreId: 28
 		}
 		actives: {
-		color:teal,
+		color:teal
 		}
 	},
 

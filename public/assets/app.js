@@ -1720,6 +1720,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1748,6 +1750,10 @@ __webpack_require__.r(__webpack_exports__);
       }],
       currentGenreId: 28
     };
+
+    actives: {
+      color: teal;
+    }
   },
   computed: {
     currentGenre: function currentGenre() {
@@ -1783,17 +1789,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1810,24 +1805,31 @@ __webpack_require__.r(__webpack_exports__);
   },
   // Call the API on startup.
   mounted: function mounted() {
-    this.callAPI();
+    this.fetchData();
   },
   // Anytime the genre or page variable is updated, call the API.
   watch: {
     genre: function genre() {
       this.page = 1;
-      this.callAPI();
+      this.fetchData();
     },
     page: function page() {
-      this.callAPI();
+      this.fetchData();
     }
   },
+  created: function created() {
+    // Create the method you made below
+    this.fetchData();
+  },
   methods: {
-    callAPI: function callAPI() {// 1. Make an ajax request to TMDb with the correct page and genre.
-      // 2. Update the following variables: movies, totalPages.
-      // 
-      // Your code here. 
-      //
+    // Fetch data from the API
+    fetchData: function fetchData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://api.themoviedb.org/3/discover/movie?api_key=753cbe6c1ec161e02cacd1e323a83454&with_genres=".concat(this.genre)).then(function (response) {
+        _this.movies = response.data.results;
+        _this.loaded = false;
+      });
     }
   }
 });
@@ -2364,6 +2366,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("header", [
+      _c("img", { attrs: { src: "logo/logo-01.png" } }),
+      _vm._v(" "),
       _c("nav", [
         _c(
           "ul",
@@ -2444,25 +2448,7 @@ var render = function() {
         })
       }),
       1
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "pagination" }, [
-      _c("a", { attrs: { href: "#movies" } }, [_vm._v("First")]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#movies" } }, [_vm._v(_vm._s(_vm.page - 2))]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#movies" } }, [_vm._v(_vm._s(_vm.page - 1))]),
-      _vm._v(" "),
-      _c("a", { staticClass: "current", attrs: { href: "#movies" } }, [
-        _vm._v(_vm._s(_vm.page))
-      ]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#movies" } }, [_vm._v(_vm._s(_vm.page + 1))]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#movies" } }, [_vm._v(_vm._s(_vm.page + 2))]),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "#movies" } }, [_vm._v("Last")])
-    ])
+    )
   ])
 }
 var staticRenderFns = []
@@ -14887,8 +14873,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alecsfp/projects/sfp-frontend-assessment/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alecsfp/projects/sfp-frontend-assessment/resources/scss/app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! /mnt/c/Users/alecm/projects/assessments/SFPassessment-OBRIENK/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /mnt/c/Users/alecm/projects/assessments/SFPassessment-OBRIENK/resources/scss/app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
