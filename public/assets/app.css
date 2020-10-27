@@ -1,0 +1,175 @@
+body {
+  margin: auto;
+  max-width: 1200px;
+}
+.logo{
+  width:80px;
+  position: absolute;
+  top:10px;
+  left: 300px;
+  z-index: 1;
+  color:white;
+}
+.family{
+  width: 1200px;
+  z-index:-1;
+  position:absolute;
+  top:0px;
+}
+.hero h1{
+  font-size: 72px;
+  font-family: 'Lato', sans-serif;
+  weight: 400;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 350px;
+  padding-left: 200px;
+
+}
+.hero a{
+  background-color: white;
+  color: black;
+  padding:1em 1.5em;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  position:absolute;
+  top:500px;
+  left: 340px;
+}
+
+
+.app {
+  padding: 2em 0;
+}
+ #movies h2{
+  font-size: 62px;
+  font-family: 'Lato', sans-serif;
+  weight: 900;
+  text-transform: uppercase;
+  color: #3f3f3f;
+  padding-top: 120px;
+  text-align: center;
+}
+#movies p{
+  font-size: 16px;
+  font-family: 'Lato' sans-serif;
+  weight: 400;
+  color: #3f3f3f;
+  text-align: center;
+  padding-top: -10px;
+
+}
+
+.container {
+  padding: 0 1em;
+}
+
+.grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie {
+  width: 200px;
+  margin: 0 0.5em 1em;
+}
+
+.movie .poster {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 1em;
+  box-shadow: 1px 1px 20px #c7c7c7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.movie .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.movie .rating {
+  color: #b8b8b8;
+  font-size: 14px;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+
+}
+.pagination{
+  text-align: center;
+}
+.pagination a{
+  font-family: 'Lato', regular;
+  weight: 400;
+  color: #3f3f3f;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+
+}
+
+
+.pagination a.current{
+  background-color: #009fd9;
+  color: white;
+}
+.pagination a.yess{
+  background-color: black;
+}
+
+.pagination a:hover{
+  background-color: #b8b8b8;
+}
+nav{
+  width:1200px;
+  position:absolute;
+  top:0px;
+  left: 120px;
+  overflow:hidden;
+  background-color:  black;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+nav ul{
+
+  float: right;
+   display: block;
+
+   color: #f2f2f2;
+   text-align: center;
+   padding:  2px 2px ;
+   text-decoration: none;
+   font-size: 17px;
+  list-style:none;
+
+}
+nav ul li{
+  display:inline;
+  padding-left:20px;
+  padding-right:20px;
+
+
+  /* text-transform: uppercase; */
+  color: white;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+nav ul li.actives{
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color:teal;
+}
+
+
+
+
+
+/* delete later */
